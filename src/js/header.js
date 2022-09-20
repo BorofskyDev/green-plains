@@ -2,7 +2,7 @@ import '../styles/index.scss';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
-import spark from '../assets/textures/spark_07.png';
+import spark from '../assets/textures/spark_06_rotated.png';
 import leaf from '../assets/textures/why.gltf'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { BlendingEquation } from 'three';
@@ -19,7 +19,7 @@ gltfLoader.load(
     leaf,
     (gltf) => 
     {
-        gltf.scene.position.set(1, -1, 0)
+        gltf.scene.position.set(0, -1, 0)
         scene.add(gltf.scene)
     }
 )
@@ -32,11 +32,14 @@ const canvas = document.querySelector('canvas.webgl');
 // Scene
 const scene = new THREE.Scene();
 
+// const fog = new THREE.Fog('#003f0f', 1, 3);
+// scene.fog = fog
+
 // Objects
 const geometry = new THREE.TorusGeometry(0.7, 0.2, 16, 100);
 
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCnt = 5000;
+const particlesCnt = 3000;
 
 const posArray = new Float32Array(particlesCnt * 3);
 
@@ -58,10 +61,11 @@ const material = new THREE.PointsMaterial({
 });
 
 const particlesMaterial = new THREE.PointsMaterial({
-  size: 0.019,
+  size: 0.015,
   map: circle,
   transparent: true,
   blending: THREE.AdditiveBlending,
+  color: '#00ff3a'
 });
 
 // Mesh
@@ -129,7 +133,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setClearColor(new THREE.Color('#21282a'), 1);
+renderer.setClearColor(new THREE.Color('#121212'), 1);
 
 // Mouse
 
@@ -156,10 +160,10 @@ const tick = () => {
   // Update objects
 //   sphere.rotation.y = 0.5 * elapsedTime;
 
-  if (mouseX > 0) {
-    particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
-    particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
-  }
+//   if (mouseX > 0) {
+//     particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
+//     particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
+//   }
 
   // Update Orbital Controls
   // controls.update()
