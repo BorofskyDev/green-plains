@@ -5,11 +5,10 @@
 /* Custom Properties*/
 /********************/
 :root {
-    /*Set Font Family*/
-    font-family: 'Lato', sans-serif;
-    font-family: 'Nunito', sans-serif;
-    font-family: 'Monoton', cursive;
-    
+  /*Set Font Family*/
+  font-family: 'Lato', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Monoton', cursive;
 }
 /*Custom Font Properties*/
 
@@ -138,4 +137,11 @@ select {
 
 .text-white {
   color: $white;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 }
