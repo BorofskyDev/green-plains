@@ -2,7 +2,7 @@ import '../styles/index.scss';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
-import spark from '../assets/textures/spark_06_rotated.png';
+import spark from '../assets/textures/trace_01_rotated.png';
 import leaf from '../assets/textures/why.gltf'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { BlendingEquation } from 'three';
@@ -39,7 +39,7 @@ const scene = new THREE.Scene();
 const geometry = new THREE.TorusGeometry(0.7, 0.2, 16, 100);
 
 const particlesGeometry = new THREE.BufferGeometry();
-const particlesCnt = 3000;
+const particlesCnt = 80000;
 
 const posArray = new Float32Array(particlesCnt * 3);
 

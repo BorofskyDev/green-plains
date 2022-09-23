@@ -18,7 +18,7 @@ $ff-title: 'Monoton', cursive;
 
 $primary: #00ff3a;
 $secondary: #ff00c5;
-$accent: #0045ff;
+$accent: #00dfff;
 
 $black: #121212;
 $white: #e9f5eb;
@@ -72,6 +72,7 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   letter-spacing: 2px;
+  overflow-x: hidden;
 }
 
 /* Images Preset */
